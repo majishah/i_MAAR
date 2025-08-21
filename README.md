@@ -15,9 +15,9 @@ The interpretable Multi-window and AutoML-based Adaptable Regression (i-MAAR) al
 
 # Experimental results (Reproducibility)
     
-    The Colab notebook linked here presents the experimental results obtained using the Tétouan dataset.
+    The Colab notebook linked here presents the experimental results obtained using the Tetouan dataset.
     
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+Experiment with Tetouan Dataset:  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
 https://colab.research.google.com/drive/1rOZxySMbhsSuUCuqBA3RcMGxoP_NV7AM)
 
 
