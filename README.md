@@ -21,5 +21,18 @@ The interpretable Multi-window and AutoML-based Adaptable Regression (i-MAAR) al
 https://colab.research.google.com/drive/1rOZxySMbhsSuUCuqBA3RcMGxoP_NV7AM)
 
 
+# Contact & Acknowledgment  
+
+This work is part of the ongoing Ph.D. research at Indian Institute of Information Technology Kottayam, carried out under the guidance of Dr.Ebin Deni Raj, Assistant Professor.  
+
+For questions, collaborations, or further information, please contact:  
+
+Shahad P  
+PhD Scholar  
+Indian Institute of Information Technology, Kottayam  
+shahadphd2019@iiitkottayam.ac.in 
+
+
+
 
 
