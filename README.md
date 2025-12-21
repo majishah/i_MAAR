@@ -1,9 +1,3 @@
-# i-MAAR: Interpretable Multi-window and AutoML-based Adaptable Regression
-
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status: Research-Reproducible](https://img.shields.io/badge/status-research--reproducible-brightgreen.svg)]()
-
 ## 📌 Abstract
 The **i-MAAR Algorithm** (Interpretable Multi-window and AutoML-based Adaptable Regression) is a novel framework designed for high-velocity streaming data environments. Unlike traditional batch-learning models, i-MAAR operates under strict real-time constraints, utilizing a **single-pass** execution model and a **dynamic multi-windowing** strategy. 
 
