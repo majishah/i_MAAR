@@ -23,7 +23,6 @@ The core of this research focuses on the "Explainability-Performance" trade-off.
 
 ## 📂 Repository Structure
 
-```text
 i-MAAR_Research/
 ├── data/                            # Dataset Management
 │   ├── processed_30_days.csv        # Pre-processed 30-day training stream
@@ -48,7 +47,6 @@ i-MAAR_Research/
 │
 ├── requirements.txt                 # Project dependencies
 └── main.py                          # Execution entry point
-
 
 ## 🛠 Installation & Setup
 
