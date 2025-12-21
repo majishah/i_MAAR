@@ -11,23 +11,6 @@ The core of this research focuses on the "Explainability-Performance" trade-off.
 
 ---
 
-## 🚀 Key Research Contributions
-
-*   **Single-Pass Streaming Logic:** Optimized for environments where data cannot be stored in its entirety. The algorithm processes each data point exactly once.
-*   **Multi-Window Adaptation:** Implements sliding windows (default 1,440 rows/day) to capture temporal dependencies without the computational overhead of "whole-data" processing.
-*   **AutoML-based Adaptability:** The system monitors performance metrics in real-time. If performance degrades due to concept drift, it autonomously re-triggers the AutoML engine to adapt to the new data distribution.
-*   **Core Interpretability & Explainability:** Provides local and global explanations for regression outputs, ensuring stakeholders understand the *why* behind the *what*.
-*   **Verified Ablation Study:** Includes a rigorous evaluation of individual components (Windowing vs. No-Windowing, AutoML vs. Static) to prove the algorithm's robustness.
-
----
-
-## 📂 Repository Structure
-
-Here is the complete **README.md** file tailored for your research. It is designed to be academic, professional, and visually appealing to reviewers. 
-
-You can simply **copy and paste** the content below into a new file named `README.md` in your GitHub repository.
-
-***
 
 ```markdown
 # i-MAAR: Interpretable Multi-window and AutoML-based Adaptable Regression
