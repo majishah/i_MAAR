@@ -48,7 +48,8 @@ i-MAAR_Research/
 │
 ├── requirements.txt                 # Project dependencies
 └── main.py                          # Execution entry point
-'''
+
+
 ## 🛠 Installation & Setup
 
 1. Clone the Repository
