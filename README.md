@@ -15,12 +15,6 @@ The core of this research focuses on the "Explainability-Performance" trade-off.
 
 
 ```markdown
-# i-MAAR: Interpretable Multi-window and AutoML-based Adaptable Regression
-
-[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Status: Research-Reproducible](https://img.shields.io/badge/status-research--reproducible-brightgreen.svg)]()
-[![XAI: SHAP/LIME](https://img.shields.io/badge/XAI-SHAP%20%7C%20LIME-orange)]()
 
 ## 📌 Overview
 This repository contains the official implementation of the **i-MAAR Algorithm** (Interpretable Multi-window and AutoML-based Adaptable Regression). 
