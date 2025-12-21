@@ -1,39 +1,50 @@
-# interpretable Multi-window and AutoML-based Adaptable Regression (i-MAAR Algorithm)
-We propose a novel algorithm, termed i-MAAR (interpretable Multi-window and AutoML-based Adaptable Regression). The primary objective of i-MAAR  is to enable adaptive and transparent learning in non-stationary streaming data environments.
+# i-MAAR: Interpretable Multi-window and AutoML-based Adaptable Regression
 
-# Abstract
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Status: Research-Reproducible](https://img.shields.io/badge/status-research--reproducible-brightgreen.svg)]()
 
-The i-MAAR (interpretable Multi-window and AutoML-based Adaptable Regression) algorithm presents a state-of-the-art solution for analyzing fast-moving, non-stationary streaming data. It effectively addresses key challenges such as reliability, low-latency response, computational efficiency, storage constraints, and concept drift. By maintaining multiple data windows, it enables efficient training, retraining, and accurate detection of concept drift, ensuring consistent and reliable model performance. To dynamically adapt to evolving data patterns, i-MAAR uses concept drift as a trigger to check for performance degradation and invokes an AutoML-based strategy to maintain robustness. The integration of SHAP values enhances transparency and trust by providing clear explanations for performance issues and guiding optimal feature selection. Operating asynchronously, the algorithm supports continuous forecasting and retraining while optimizing resource utilization. An ablation study highlights the contribution of each component to the system’s overall accuracy and stability. Experimental results show that i-MAAR consistently outperforms existing methods in predictive accuracy and adaptability, making it a powerful and efficient choice for real-time streaming data analysis.
+## 📌 Abstract
+The **i-MAAR Algorithm** (Interpretable Multi-window and AutoML-based Adaptable Regression) is a novel framework designed for high-velocity streaming data environments. Unlike traditional batch-learning models, i-MAAR operates under strict real-time constraints, utilizing a **single-pass** execution model and a **dynamic multi-windowing** strategy. 
 
-# Features 
+The core of this research focuses on the "Explainability-Performance" trade-off. By integrating an AutoML backbone for autonomous model selection and an interpretability layer (SHAP/LIME), i-MAAR ensures that every prediction is not only accurate but also human-verifiable in non-stationary environments.
 
-- Robust performance for streaming data analysis (SDA)  
-- Adaptive model updating based on evolving feature importance  
-- Built-in interpretability using SHAP for transparency and trust  
-- Ablation study demonstrating the role of each component  
+---
 
-# Experimental results (Reproducibility)
-    
-    The Colab notebook linked here presents the experimental results obtained using the Tetouan dataset.
-    
-Experiment with Tetouan Dataset:  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
-https://colab.research.google.com/drive/1rOZxySMbhsSuUCuqBA3RcMGxoP_NV7AM)
+## 🚀 Key Research Contributions
 
-Baseline Model Comparisons:  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1NL3Vlu27wgHRZ_IJ5SDnGLffFB29eFlO?authuser=3#scrollTo=tSv8SGovKQrx)
+*   **Single-Pass Streaming Logic:** Optimized for environments where data cannot be stored in its entirety. The algorithm processes each data point exactly once.
+*   **Multi-Window Adaptation:** Implements sliding windows (default 1,440 rows/day) to capture temporal dependencies without the computational overhead of "whole-data" processing.
+*   **AutoML-based Adaptability:** The system monitors performance metrics in real-time. If performance degrades due to concept drift, it autonomously re-triggers the AutoML engine to adapt to the new data distribution.
+*   **Core Interpretability & Explainability:** Provides local and global explanations for regression outputs, ensuring stakeholders understand the *why* behind the *what*.
+*   **Verified Ablation Study:** Includes a rigorous evaluation of individual components (Windowing vs. No-Windowing, AutoML vs. Static) to prove the algorithm's robustness.
 
+---
 
-# Contact & Acknowledgment  
+## 📂 Repository Structure
 
-This work is part of the ongoing Ph.D. research at Indian Institute of Information Technology Kottayam, carried out under the guidance of Dr.Ebin Deni Raj, Assistant Professor.  
-
-For questions, collaborations, or further information, please contact:  
-
-Shahad P  
-PhD Scholar  
-Indian Institute of Information Technology, Kottayam  
-shahadphd2019@iiitkottayam.ac.in 
-
-
-
-
-
+```text
+i-MAAR_Research/
+├── data/                            # Dataset Management
+│   ├── processed_30_days.csv        # Pre-processed 30-day training stream
+│   └── raw_data/                    # Original raw sensor streams
+│
+├── src/                             # Core Logic
+│   ├── imaar_engine.py              # Main algorithm and Windowing logic
+│   ├── automl_handler.py            # PyCaret-based model selection
+│   └── config.py                    # Hyperparameters (window size, thresholds)
+│
+├── explainability/                  # XAI Module
+│   ├── shap_explainer.py            # Local feature importance
+│   └── visualizer.py                # Real-time explainability dashboards
+│
+├── experiments/                     # Research Validation
+│   ├── ablation_study.py            # Component-wise impact analysis
+│   └── benchmark_tests.py           # Comparison vs. Static Regressors
+│
+├── results/                         # Evaluation Outputs
+│   ├── plots/                       # Performance & Explainability graphs
+│   └── metrics/                     # CSV logs of R², RMSE, and Latency
+│
+├── requirements.txt                 # Project dependencies
+└── main.py                          # Execution entry point
