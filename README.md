@@ -49,7 +49,9 @@ i-MAAR_Research/
 ├── requirements.txt                 # Project dependencies
 └── main.py                          # Execution entry point
 
-🛠 Installation & Setup
+
+## 🛠 Installation & Setup
+
 1. Clone the Repository
 
 git clone https://github.com/your-username/i-MAAR-Algorithm.git
