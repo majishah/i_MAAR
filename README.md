@@ -148,13 +148,7 @@ python experiments/drift_analysis.py
 ---
 
 
-🎓 Citation
-
-If you use this algorithm or code in your research, please cite:
-
-    Author Name, "Interpretable Multi-window and AutoML-based Adaptable Regression (i-MAAR Algorithm)", Research Article, 2024.
-
-Contact
+🎓 Contact
 For inquiries regarding the architecture or experimental data, please refer to the corresponding author details in the associated manuscript.
 
 This repository is part of ongoing research into Explainable AI (XAI) for Streaming Data.
