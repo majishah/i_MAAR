@@ -105,13 +105,22 @@ pip install pycaret shap matplotlib seaborn
 
 ## 📊 Experimental Results & Ablation Study
 
-### 1. Model Performance vs. Adaptability
-Under conditions of simulated concept drift, i-MAAR maintains a stable R² score while traditional models degrade.
+### 1. Comparative Streaming Performance and Efficiency
 
-| Model | Avg. R² (Stable) | Avg. R² (After Drift) | Adaptation Latency |
-| :--- | :--- | :--- | :--- |
-| Static Regressor | 0.88 | 0.42 | N/A |
-| **i-MAAR (Proposed)** | **0.89** | **0.84** | **< 1.2s** |
+To rigorously evaluate the model's capability under high-velocity data streams, we compared i-MAAR against five state-of-the-art streaming algorithms across three consecutive sliding windows. As detailed in the table below, the evaluation considers both predictive accuracy (MAE, RMSE, MAPE) and computational efficiency (Time).
+
+While distance-based methods like KNN achieve low error margins, they suffer from prohibitive computational costs (averaging >330ms per update). In contrast, i-MAAR demonstrates superior real-time adaptability, processing updates in single-digit milliseconds (Avg<9.8ms)—an improvement of orders of magnitude over ensemble methods like ARF (up to 1987 ms) and LBR. Consequently, i-MAAR secures the Rank 1 position overall by delivering competitive accuracy without compromising the low-latency requirements of real-time systems.
+Model	W1 MAE	W1 RMSE	W1 MAPE	W1 Time	W2 MAE	W2 RMSE	W2 MAPE	W2 Time	W3 MAE	W3 RMSE	W3 MAPE	W3 Time	Rank
+i-MAAR	3437.6	4213.9	12.2	9.8	3172.0	4273.4	11.4	9.3	3750.4	4895.0	13.5	6.2	1
+HTR	4591.1	6334.3	17.0	75.8	3849.7	5665.6	14.1	72.6	3466.7	5136.6	12.1	92.4	4
+ARF	3080.4	5235.1	11.0	130.0	2367.8	4284.6	8.3	636.4	2176.4	3856.0	7.5	1987.8	3
+OBR	19533.7	23377.4	70.2	92.7	19637.1	23474.9	70.2	69.0	19965.0	23762.8	70.3	68.4	6
+LBR	4841.6	6402.2	18.0	161.1	4039.2	5764.3	14.5	211.9	3420.7	5199.4	11.4	174.2	5
+KNN	1283.9	4309.3	5.3	339.4	1522.7	4059.0	5.0	348.5	1425.5	3832.6	4.6	331.6	2
+
+Table 1: Performance comparison over the first 3 streaming windows (W1, W2, W3) using MAE, RMSE, MAPE (%) and Time (ms). Bold indicates the best value per column. The overall best average rank is also bolded. HTR – Hoeffding Tree Regressor, ARF – Adaptive Random Forest Regressor, OBR – Online Bayesian Regressor, LBR – Leveraging Bagging Regressor.
+
+The results further validate that i-MAAR maintains robust error rates (MAPE: 11.4–13.5%, RMSE:<4900) while acting as the most computationally efficient solution among all compared baselines.
 
 ### 2. Ablation Study Summary
 We evaluated the impact of removing key modules to justify our architecture:
