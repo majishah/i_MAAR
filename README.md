@@ -161,26 +161,14 @@ One of the core strengths of i-MAAR is the real-time generation of explainabilit
 *   **Global Feature Importance:** Identifies which variables are driving the trend in the current window.
 *   **Local SHAP Values:** Provides a precise explanation for individual outlier predictions.
 
-*(Tip: Place a screenshot of your SHAP/LIME plots in `results/plots/` and link them here!)*
-
 ---
 
-##  Usage
 
 ### Running the Full Pipeline
 To process the 30-day pre-processed stream and generate the i-MAAR performance report:
 ```bash
 python main.py --input data/processed/preprocessed_30_days.csv --windows 1440 --xai True
 ```
-
-### Reproducing Experiments
-To replicate the benchmarks and ablation study presented in the manuscript:
-```bash
-python experiments/ablation_study.py
-python experiments/drift_analysis.py
-```
-
----
 
 
 ### Contact
