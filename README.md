@@ -103,7 +103,7 @@ pip install pycaret shap matplotlib seaborn
 
 ---
 
-## 📊 Experimental Results & Ablation Study
+## 📊 Experimental Results 
 
 ### 1. Comparative Streaming Performance and Efficiency
 
@@ -124,6 +124,34 @@ Consequently, i-MAAR secures the Rank-1 position overall, delivering competitive
 | LBR | 4841.6 | 6402.2 | 18.0 | 161.1 | 4039.2 | 5764.3 | 14.5 | 211.9 | 3420.7 | 5199.4 | 11.4 | 174.2 | 5 |
 | KNN | 1283.9 | 4309.3 | 5.3 | 339.4 | 1522.7 | 4059.0 | 5.0 | 348.5 | 1425.5 | 3832.6 | 4.6 | 331.6 | 2 |
 
+
+### Validation of Model Superiority via Friedman–Nemenyi Test
+
+We applied the Friedman test across **100 streaming windows** to compare six algorithms using **MAE, RMSE, MAPE, and runtime**. The test revealed statistically significant differences at **α = 0.05** (p ≪ 0.001).
+
+Average ranks indicate that **KNN** leads on MAE and MAPE, **ARF** on RMSE, and **i-MAAR** on runtime.  
+To identify the most balanced method, we computed a **trade-off score** defined as the harmonic mean of normalized ranks across all metrics.
+
+**i-MAAR achieved the highest trade-off score (0.83)**, confirming its strong balance between predictive accuracy and computational efficiency.
+
+| Method | MAE Rank | RMSE Rank | MAPE Rank | Time Rank | Trade-off Score |
+|--------|----------|-----------|-----------|-----------|-----------------|
+| FoSST | 3.75 | 2.23 | 3.36 | 1.05 | **0.83** |
+| KNN | 1.12 | 1.82 | 1.09 | 5.34 | 0.80 |
+| ARF | 1.97 | 2.05 | 2.00 | 5.19 | 0.77 |
+| HDT | 3.85 | 3.97 | 3.55 | 2.79 | 0.68 |
+| LBR | 4.31 | 4.93 | 6.00 | 4.18 | 0.54 |
+| OBR | 6.00 | 6.00 | 5.00 | 2.45 | 0.51 |
+
+| Metric | Chi-square (χ²) | p-value | Reject H₀ |
+|-------|------------------|---------|-----------|
+| MAE | 431.33 | 5.23e-91 | Yes |
+| RMSE | 430.10 | 9.61e-91 | Yes |
+| MAPE | 473.72 | 3.75e-100 | Yes |
+| Time | 408.95 | 3.50e-86 | Yes |
+
+All evaluated metrics show statistically significant differences among the compared models.  
+FoSST consistently achieves the best balance between accuracy and runtime efficiency, making it well suited for high-velocity streaming environments.
 
 
 
