@@ -113,18 +113,17 @@ While distance-based methods such as KNN achieve low error margins, they incur p
 
 Consequently, i-MAAR secures the Rank-1 position overall, delivering competitive accuracy without compromising the low-latency requirements of real-time streaming systems.
 
-Table 1: Performance Comparison over Streaming Windows
+## Performance Comparison over Streaming Windows
 
-Metrics: MAE, RMSE, MAPE (%) and Time (ms)
-Bold indicates the best value per column.
+| Model | W1_MAE | W1_RMSE | W1_MAPE | W1_Time(ms) | W2_MAE | W2_RMSE | W2_MAPE | W2_Time(ms) | W3_MAE | W3_RMSE | W3_MAPE | W3_Time(ms) | Rank |
+|------|--------|---------|---------|-------------|--------|---------|---------|-------------|--------|---------|---------|-------------|------|
+| i-MAAR | 3437.6 | 4213.9 | 12.2 | 9.8 | 3172.0 | 4273.4 | 11.4 | 9.3 | 3750.4 | 4895.0 | 13.5 | 6.2 | 1 |
+| HTR | 4591.1 | 6334.3 | 17.0 | 75.8 | 3849.7 | 5665.6 | 14.1 | 72.6 | 3466.7 | 5136.6 | 12.1 | 92.4 | 4 |
+| ARF | 3080.4 | 5235.1 | 11.0 | 130.0 | 2367.8 | 4284.6 | 8.3 | 636.4 | 2176.4 | 3856.0 | 7.5 | 1987.8 | 3 |
+| OBR | 19533.7 | 23377.4 | 70.2 | 92.7 | 19637.1 | 23474.9 | 70.2 | 69.0 | 19965.0 | 23762.8 | 70.3 | 68.4 | 6 |
+| LBR | 4841.6 | 6402.2 | 18.0 | 161.1 | 4039.2 | 5764.3 | 14.5 | 211.9 | 3420.7 | 5199.4 | 11.4 | 174.2 | 5 |
+| KNN | 1283.9 | 4309.3 | 5.3 | 339.4 | 1522.7 | 4059.0 | 5.0 | 348.5 | 1425.5 | 3832.6 | 4.6 | 331.6 | 2 |
 
-Model	W1 MAE	W1 RMSE	W1 MAPE	W1 Time	W2 MAE	W2 RMSE	W2 MAPE	W2 Time	W3 MAE	W3 RMSE	W3 MAPE	W3 Time	Rank
-i-MAAR	3437.6	4213.9	12.2	9.8	3172.0	4273.4	11.4	9.3	3750.4	4895.0	13.5	6.2	1
-HTR	4591.1	6334.3	17.0	75.8	3849.7	5665.6	14.1	72.6	3466.7	5136.6	12.1	92.4	4
-ARF	3080.4	5235.1	11.0	130.0	2367.8	4284.6	8.3	636.4	2176.4	3856.0	7.5	1987.8	3
-OBR	19533.7	23377.4	70.2	92.7	19637.1	23474.9	70.2	69.0	19965.0	23762.8	70.3	68.4	6
-LBR	4841.6	6402.2	18.0	161.1	4039.2	5764.3	14.5	211.9	3420.7	5199.4	11.4	174.2	5
-KNN	1283.9	4309.3	5.3	339.4	1522.7	4059.0	5.0	348.5	1425.5	3832.6	4.6	331.6	2
 
 
 
