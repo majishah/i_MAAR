@@ -143,15 +143,8 @@ To identify the most balanced method, we computed a **trade-off score** defined 
 | LBR | 4.31 | 4.93 | 6.00 | 4.18 | 0.54 |
 | OBR | 6.00 | 6.00 | 5.00 | 2.45 | 0.51 |
 
-| Metric | Chi-square (χ²) | p-value | Reject H₀ |
-|-------|------------------|---------|-----------|
-| MAE | 431.33 | 5.23e-91 | Yes |
-| RMSE | 430.10 | 9.61e-91 | Yes |
-| MAPE | 473.72 | 3.75e-100 | Yes |
-| Time | 408.95 | 3.50e-86 | Yes |
-
 All evaluated metrics show statistically significant differences among the compared models.  
-FoSST consistently achieves the best balance between accuracy and runtime efficiency, making it well suited for high-velocity streaming environments.
+i-MAAR consistently achieves the best balance between accuracy and runtime efficiency, making it well suited for high-velocity streaming environments.
 
 
 
@@ -163,7 +156,7 @@ We evaluated the impact of removing key modules to justify our architecture:
 
 ---
 
-## 🔍 Interpretability in Action
+##  Interpretability in Action
 One of the core strengths of i-MAAR is the real-time generation of explainability plots. During the streaming process, the model outputs:
 *   **Global Feature Importance:** Identifies which variables are driving the trend in the current window.
 *   **Local SHAP Values:** Provides a precise explanation for individual outlier predictions.
@@ -172,7 +165,7 @@ One of the core strengths of i-MAAR is the real-time generation of explainabilit
 
 ---
 
-## 📖 Usage
+##  Usage
 
 ### Running the Full Pipeline
 To process the 30-day pre-processed stream and generate the i-MAAR performance report:
@@ -190,7 +183,7 @@ python experiments/drift_analysis.py
 ---
 
 
-🎓 Contact
+### Contact
 For inquiries regarding the architecture or experimental data, please refer to the corresponding author details in the associated manuscript.
 
 This repository is part of ongoing research into Explainable AI (XAI) for Streaming Data.
